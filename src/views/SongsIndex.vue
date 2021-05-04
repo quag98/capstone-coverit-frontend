@@ -1,16 +1,35 @@
 <template>
-  <div class="home">
-    <div>
-      <div v-for="song in songs" v-bind:key="song.id">
+  <div id="portfolio">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <div class="col-lg-4 col-sm-6" v-for="song in songs" v-bind:key="song.id">
+          <div class="portfolio-box" v-on:click="`/songs/${song.id}`">
+            <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">{{ song.title }}</div>
+              <div class="project-name">{{ song.description }}</div>
+              <router-link class="song-info" v-bind:to="`/songs/${song.id}`">More Info</router-link>
+              <!-- <div class="project-name">Project Name</div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+      <!-- <div v-for="song in songs" v-bind:key="song.id">
         <h3>{{ song.title }}</h3>
         <p>{{ song.description }}</p>
         <router-link v-bind:to="`/songs/${song.id}`">More Info</router-link>
         <br>
         <button v-on:click="createFavorites">Add to Favorites</button>
-      </div>
-    </div>
-  </div>
+      </div> -->
 </template>
+
+<style>
+.song-info {
+  color: black;
+}
+</style>
 
 <script>
 import axios from "axios";

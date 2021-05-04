@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <header>
+      
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/signup">Signup</router-link> |
@@ -8,30 +12,43 @@
       <router-link to="/logout">Logout</router-link> |
       <router-link to="/songs">Song List</router-link> |
       <router-link to="/favorites">Favorites</router-link> |
-    </div>
+    </nav>
+    <br>
+    <br>
+    <br>
     <router-view />
+
+  <footer class="bg-light py-5">
+       <div class="container">
+                <div class="small text-center text-muted">
+                    Copyright &copy;
+                    <!-- This script automatically adds the current year to your website footer-->
+                    <!-- (credit: https://updateyourfooter.com/)-->
+                    <!-- <script>
+                        document.write(new Date().getFullYear());
+                    </script> -->
+                    - Company Name
+                </div>
+            </div>
+  </footer>
+
   </div>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  position: relative;
+  min-height: 120vh;
 }
 
-#nav {
-  padding: 30px;
+.content-wrap {
+  padding-bottom: 2.5rem; /* Footer height */
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.bg-light.py-5 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
 }
 </style>
